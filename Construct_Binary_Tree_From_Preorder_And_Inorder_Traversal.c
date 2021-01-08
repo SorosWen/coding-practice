@@ -7,7 +7,7 @@ struct TreeNode* buildTree_r(int* preorder, int* inorder,
 	struct TreeNode* root = malloc(sizeof(struct TreeNode));
 	root->val = preorder[preStart];
 	
-    // Find root in inorder
+    	// Find root in inorder
 	int in_rootID, i; 
 	for(i = inStart; i <= inEnd; i++) {
 		if(inorder[i] == root->val) {
@@ -16,7 +16,7 @@ struct TreeNode* buildTree_r(int* preorder, int* inorder,
 		}
 	}
     
-    // create left and right node. 
+    	// create left and right node. 
 	root->left  = buildTree_r(preorder, inorder, 
                               preStart + 1, preStart + (in_rootID - inStart), 
                               inStart, in_rootID - 1); 
